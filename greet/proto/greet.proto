@@ -1,5 +1,5 @@
 syntax = "proto3";
-package greet;
+package main;
 option go_package = "github.com/MadhavKumaar/go/greet/proto";
 
 message greetRequest{
