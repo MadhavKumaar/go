@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"net"
 
 	pb "github.com/MadhavKumaar/go/greet/proto"
@@ -18,14 +18,15 @@ func main() {
 	lis, err := net.Listen("tcp", addr)
 
 	if err != nil {
-		log.Fatal("Failed to listen: %v\n", err)
+		fmt.Printf("Failed to listen: %v\n", err)
 	}
-	log.Printf("Listening at %s\n", addr)
+
+	fmt.Printf("Listening at %s\n", addr)
 
 	s := grpc.NewServer()
 
 	if err = s.Serve(lis); err != nil {
-		log.Fatal("Failed to server: %v\n", err)
+		fmt.Printf("Failed to server: %v\n", err)
 	}
 
 }

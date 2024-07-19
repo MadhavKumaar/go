@@ -35,7 +35,7 @@ func NewGreetServiceClient(cc grpc.ClientConnInterface) GreetServiceClient {
 
 func (c *greetServiceClient) Greet(ctx context.Context, in *GreetRequest, opts ...grpc.CallOption) (*GreetResponse, error) {
 	out := new(GreetResponse)
-	err := c.cc.Invoke(ctx, "/greet.greetService/greet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/main.greetService/greet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _GreetService_Greet_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/greet.greetService/greet",
+		FullMethod: "/main.greetService/greet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GreetServiceServer).Greet(ctx, req.(*GreetRequest))
@@ -92,7 +92,7 @@ func _GreetService_Greet_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GreetService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "greet.greetService",
+	ServiceName: "main.greetService",
 	HandlerType: (*GreetServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
