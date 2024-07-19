@@ -1,6 +1,6 @@
 syntax = "proto3";
 package greet;
-option go_package = "github.com/MadhavKumaar/go-learn/greet/proto";
+option go_package = "github.com/MadhavKumaar/go/greet/proto";
 
 message greetRequest{
     string first_name = 1;

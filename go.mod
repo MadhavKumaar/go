@@ -1,4 +1,4 @@
-module github.com/MadhavKumaar/go-learn
+module github.com/MadhavKumaar/go
 
 go 1.22.5
 
